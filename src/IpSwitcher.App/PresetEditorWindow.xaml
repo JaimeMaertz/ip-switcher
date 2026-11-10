@@ -1,0 +1,51 @@
+<Window x:Class="IpSwitcher.PresetEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Preset" Width="380" SizeToContent="Height"
+        ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Padding="20,16,20,20" Background="{DynamicResource SolidBackgroundFillColorBaseBrush}">
+    <StackPanel>
+        <TextBlock x:Name="Heading" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,2" />
+        <TextBlock x:Name="AdapterText" FontSize="12" Margin="0,0,0,14"
+                   Foreground="{DynamicResource TextFillColorSecondaryBrush}" />
+
+        <TextBlock Text="Name" Margin="0,0,0,4" />
+        <TextBox x:Name="NameBox" Margin="0,0,0,10" />
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="12" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="IP address" Margin="0,0,0,4" />
+                <TextBox x:Name="AddressBox" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Subnet mask" Margin="0,0,0,4" />
+                <TextBox x:Name="MaskBox" Text="255.255.255.0" ToolTip="255.255.255.0, or a prefix length: 24 or /24" />
+            </StackPanel>
+        </Grid>
+
+        <TextBlock Text="Gateway (optional)" Margin="0,0,0,4" />
+        <TextBox x:Name="GatewayBox" Margin="0,0,0,10" />
+
+        <TextBlock Text="DNS servers (optional, comma-separated)" Margin="0,0,0,4" />
+        <TextBox x:Name="DnsBox" Margin="0,0,0,12" />
+
+        <Border x:Name="ErrorBar" Visibility="Collapsed" CornerRadius="4" Padding="10,6" Margin="0,0,0,12"
+                Background="{DynamicResource SystemFillColorCriticalBackgroundBrush}">
+            <TextBlock x:Name="ErrorText" TextWrapping="Wrap" FontSize="12"
+                       Foreground="{DynamicResource SystemFillColorCriticalBrush}" />
+        </Border>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Save" IsDefault="True" MinWidth="88" Margin="0,0,8,0" Click="Save_Click" />
+            <Button Content="Cancel" IsCancel="True" MinWidth="88" />
+        </StackPanel>
+    </StackPanel>
+    </Border>
+</Window>

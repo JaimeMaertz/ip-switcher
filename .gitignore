@@ -1,0 +1,18 @@
+# Build output
+bin/
+obj/
+publish/
+*.user
+
+# Screenshots and scratch
+tmp/
+
+# Editor and OS clutter
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Published binaries
+*.exe
