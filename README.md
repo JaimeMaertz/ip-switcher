@@ -142,7 +142,7 @@ whichever exe installed it (`schtasks /Query /TN "IP Switcher" /XML` shows which
 ## Related tools
 
 - [pinger](https://github.com/JaimeMaertz/pinger): sweep the subnet you just switched to
-- [netdiagram](https://github.com/JaimeMaertz/netdiagram): draws how switches and devices connect
+- [netdiagram](https://github.com/JaimeMaertz/net-diagram): draws how switches and devices connect
 - [ip-table-database-editor](https://github.com/JaimeMaertz/ip-table-database-editor): builds pinger's device database from IP tables
 
 ## License
